@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import Navbar from "./components/Navbar";
-import Intro from "./components/Intro";
-import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 import Features from "./components/Features";
+import Footer from "./components/Footer";
 
 function App() {
   const [stars, setStars] = useState(0);
@@ -31,49 +32,16 @@ function App() {
     <div className="flex min-h-screen flex-col bg-[#FFF9F2] text-[#800020]">
       <Navbar />
 
-      <Intro />
-
-      <div className="flex justify-center gap-4 py-6">
-        <button
-          className="cursor-pointer rounded-lg bg-[#800020] px-8 py-3 text-xl font-bold text-[#FFF9F2]"
-          onClick={handleStar}
-        >
-          Star
-        </button>
-        <button
-          className="cursor-pointer rounded-lg bg-[#D45060] px-8 py-3 text-xl font-bold text-[#FFF9F2]"
-          onClick={handleDownload}
-        >
-          Download
-        </button>
-        <button
-          className="cursor-pointer rounded-lg bg-[#000000] px-8 py-3 text-xl font-bold text-[#FFF9F2]"
-          onClick={handleReport}
-        >
-          Report issue
-        </button>
-        <button
-          className="cursor-pointer rounded-lg border border-[#800020] px-8 py-3 text-xl font-bold"
-          onClick={handleReset}
-        >
-          Reset
-        </button>
-      </div>
-
-      <div className="flex justify-center gap-6 pb-8">
-        <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
-          <p className="text-4xl font-bold">{stars}</p>
-          <p className="mt-1 text-lg text-[#000000]">Stars</p>
-        </div>
-        <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
-          <p className="text-4xl font-bold">{downloads}</p>
-          <p className="mt-1 text-lg text-[#000000]">Downloads</p>
-        </div>
-        <div className="w-48 rounded-xl bg-[#F3E6D5] py-4 text-center">
-          <p className="text-4xl font-bold">{issues}</p>
-          <p className="mt-1 text-lg text-[#000000]">Issues reported</p>
-        </div>
-      </div>
+      <Hero
+        author="Boltron, John Thomas B."
+        onStar={handleStar}
+        onDownload={handleDownload}
+        onReport={handleReport}
+        onReset={handleReset}
+        stars={stars}
+        downloads={downloads}
+        issues={issues}
+      />
 
       <Features />
 
