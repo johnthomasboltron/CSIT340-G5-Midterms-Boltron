@@ -1,4 +1,3 @@
-
 import StatCard from "./StatCard";
 
 function Stats({ stars, downloads, issues }) {
